@@ -3,6 +3,7 @@ package fr.velris.gamestats;
 import fr.velris.gamestats.managers.MCommands;
 import fr.velris.gamestats.managers.MFiles;
 import fr.velris.gamestats.managers.MListeners;
+import fr.velris.gamestats.utils.UUtils;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -19,6 +20,11 @@ public final class GameStats extends JavaPlugin {
     private MListeners mListeners;
     private MCommands mCommands;
 
+    /*
+    UTILS
+     */
+    private UUtils utils;
+
     @Override
     public void onEnable() {
         Log(Level.INFO, "Loading the plugin...");
@@ -33,6 +39,11 @@ public final class GameStats extends JavaPlugin {
         mFiles.LoadFiles();
         mListeners = new MListeners();
         mCommands = new MCommands();
+
+        /*
+        UTILS
+         */
+        utils = new UUtils();
 
         /*
         INITIALIZATION
@@ -65,5 +76,9 @@ public final class GameStats extends JavaPlugin {
 
     public MCommands getmCommands() {
         return mCommands;
+    }
+
+    public UUtils getUtils() {
+        return utils;
     }
 }
