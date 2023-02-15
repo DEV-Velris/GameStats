@@ -16,7 +16,7 @@ public final class GameStats extends JavaPlugin {
     /*
     MANAGERS
      */
-    private MFiles mFiles;
+    privatze MFiles mFiles;
     private MListeners mListeners;
     private MCommands mCommands;
 
