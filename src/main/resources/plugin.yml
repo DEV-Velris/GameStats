@@ -1,0 +1,6 @@
+name: GameStats
+version: '${project.version}'
+main: fr.velris.gamestats.GameStats
+api-version: 1.19
+authors: [ Velris ]
+description: GameStats is a comprehensive Minecraft plugin that allows players to view detailed statistics about their gameplay
