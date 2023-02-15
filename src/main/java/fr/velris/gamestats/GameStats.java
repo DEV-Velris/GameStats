@@ -2,6 +2,7 @@ package fr.velris.gamestats;
 
 import fr.velris.gamestats.managers.MCommands;
 import fr.velris.gamestats.managers.MFiles;
+import fr.velris.gamestats.managers.MInventories;
 import fr.velris.gamestats.managers.MListeners;
 import fr.velris.gamestats.utils.UUtils;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,7 +17,8 @@ public final class GameStats extends JavaPlugin {
     /*
     MANAGERS
      */
-    privatze MFiles mFiles;
+    private MFiles mFiles;
+    private MInventories inventories;
     private MListeners mListeners;
     private MCommands mCommands;
 
@@ -37,6 +39,7 @@ public final class GameStats extends JavaPlugin {
         mFiles = new MFiles();
         //Load files before all
         mFiles.LoadFiles();
+        inventories = new MInventories();
         mListeners = new MListeners();
         mCommands = new MCommands();
 
@@ -48,6 +51,7 @@ public final class GameStats extends JavaPlugin {
         /*
         INITIALIZATION
          */
+        inventories.LoadInventories();
         mListeners.LoadListeners();
         mCommands.LoadCommands();
         Log(Level.INFO, "Plugin ready");
@@ -64,6 +68,10 @@ public final class GameStats extends JavaPlugin {
 
     public static GameStats getInstance() {
         return instance;
+    }
+
+    public MInventories getInventories() {
+        return inventories;
     }
 
     public MFiles getmFiles() {
