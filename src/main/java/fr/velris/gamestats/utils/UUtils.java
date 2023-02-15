@@ -20,9 +20,4 @@ public class UUtils {
         }
     }
 
-    //TODO Test getPlayerLocation
-    public String getPlayerLocation(Player player) {
-        return "§bX§7: §c"+player.getLocation().getBlockX()+" §bY§7: §c"+player.getLocation().getBlockY()+" §bZ§7: §c"+player.getLocation().getBlockZ();
-    }
-
 }
